@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t m7/reactproject -f Dockerfile.dev .
+  - docker build -t m7/reactproject -f DOCKERFILE.dev .
 
 script:
   - docker run -e CI=true m7/reactproject npm run test -- --coverage
