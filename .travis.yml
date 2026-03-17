@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t m7/reactproject -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true m7/reactproject npm run test -- --coverage
