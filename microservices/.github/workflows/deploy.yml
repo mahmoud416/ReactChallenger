@@ -12,10 +12,10 @@ jobs:
       - run: docker build -t m7/reactproject -f DOCKERFILE.dev .
       - run: docker run -e CI=true m7/reactproject npm run test -- --coverage
 
-      - run: docker build -t m7/multi-client ./microservices/client
-      - run: docker build -t m7/multi-server ./microservices/server
-      - run: docker build -t m7/multi-worker ./microservices/worker
-      - run: docker build -t m7/multi-nginx ./microservices/nginx
+      - run: docker build -t m7/multi-client ./client
+      - run: docker build -t m7/multi-server ./server
+      - run: docker build -t m7/multi-worker ./worker
+      - run: docker buld -t m7/multi-nginx ./nginx
 
       - run: docker push m7/multi-client
       - run: docker push m7/multi-server
